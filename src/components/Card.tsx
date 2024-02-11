@@ -169,17 +169,22 @@ function Card({
   title,
   description,
   color,
+  id,
 }: {
   title: string;
   description: string;
   color: CardColor;
+  id: string;
 }) {
   const selectedColor = cardColors[color];
 
   return (
     <div
-      className={`${selectedColor.background} flex grow items-center justify-center p-10 shadow-inner`}>
+      className={`${selectedColor.background} relative flex grow items-center justify-center p-10 shadow-[inset_0px_-8px_20px_0px_rgba(255,255,255,0.1)]`}>
       <div>
+        <p className="absolute right-5 top-5 text-xl font-extrabold opacity-50">
+          #{id}
+        </p>
         <h1 className={`${selectedColor.primary} text-4xl font-extrabold`}>
           {title}
         </h1>
